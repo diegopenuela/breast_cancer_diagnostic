@@ -11,28 +11,24 @@ def answer_zero():
 
 #Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
-
 	#Convert the sklearn.dataset cancer to a DataFrame.
 	cancerdf = pd.DataFrame(cancer.data , columns=cancer.feature_names)
-
 	#Assign new column to a DataFrame. Add Target Column (0,1)
 	cancerdf = cancerdf.assign(target=pd.Series(cancer.target))
 	return cancerdf
 
+
+#This function should return a Series named `target` of length 2 with integer values and index =* `['malignant', 'benign']`
 def answer_two():
 	cancerdf = answer_one()
-	
 	#Based on previous answer. Count instances for each target (1,0).
 	distribution = cancerdf.target.value_counts()
-
 	#Define index as requested. Print order (1 then 0, therefore 'benign' then 'malignant')
 	distribution.index = [ 'benign','malignant']
-
 	#Series named target. 
 	target = pd.Series(distribution, name="target")
-
-	print (distribution)
-	return # Return your answer
+	#print (distribution)  #Debug
+	return target
 
 
 cancer = load_breast_cancer()
@@ -62,14 +58,8 @@ cancer = load_breast_cancer()
 #array(['malignant', 'benign']
 
 print ("cancer data")
-print (cancer.data)
-#print (type(cancer))
-#print (cancer)
-
-
 
 #print (cancer.keys())  #Debug
-
 #print (cancer['feature_names'])   #Debug
 
 # You can examine what your function returns by calling it in the cell. If you have questions
