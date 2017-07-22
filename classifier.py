@@ -12,9 +12,6 @@ def answer_zero():
 #Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
 	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
-	index=one.index
-	print (type(one))
-	print (index)
 	return one
 
 
@@ -32,8 +29,8 @@ cancer = load_breast_cancer()
 
 # You can examine what your function returns by calling it in the cell. If you have questions
 # about the assignment formats, check out the discussion forums for any FAQs
-#print ("Answer Zero")
-#print (answer_zero())
+print ("Answer Zero")
+print (answer_zero())
 #print (cancer['feature_names'])   #Debug
 
 print ("Answer One")
