@@ -96,6 +96,16 @@ def answer_seven():
 
 	return prediction
 
+#8. Find the score (mean accuracy) of your knn classifier using X_test and y_test.
+def answer_seven():
+	X_train, X_test, y_train, y_test = answer_four()
+	knn = answer_five()
+
+	#Estimate the accuracy of the classifier on future data, using the test data
+	score = knn.score(X_test, y_test)
+
+	return score
+
 
 
 cancer = load_breast_cancer()
@@ -155,4 +165,7 @@ print (answer_six())
 
 print ("Answer Seven")
 print (answer_seven())
+
+print ("Answer Eight")
+print (answer_eight())
 
