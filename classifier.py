@@ -72,6 +72,22 @@ def answer_five():
 	# Train classifier
 	return knn.fit(X_train, y_train)
 
+#6. Using the knn classifier to predict the class label using the mean value for each feature.
+def answer_six():
+	cancerdf = answer_one()
+	knn = answer_five()
+
+	#gets the mean value for each feature, ignores the target column, and reshapes the data from 1 dimension to 2 (necessary for the precict method of KNeighborsClassifier).
+	means = cancerdf.mean()[:-1].values.reshape(1, -1)
+
+	prediction = knn.predict(means)
+
+	print ("Type Prediction")
+	print(type(prediction))
+
+	return prediction
+
+
 
 cancer = load_breast_cancer()
 
@@ -124,3 +140,7 @@ print (answer_four())
 
 print ("Answer Five")
 print (answer_five())
+
+print ("Answer Six")
+print (answer_six())
+
