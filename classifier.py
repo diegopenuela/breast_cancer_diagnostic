@@ -9,14 +9,14 @@ def answer_zero():
     # The assignment question description will tell you the general format the autograder is expecting
     return len(cancer['feature_names'])
 
-# You can examine what your function returns by calling it in the cell. If you have questions
-# about the assignment formats, check out the discussion forums for any FAQs
-answer_zero() 
-
-
 
 cancer = load_breast_cancer()
 
 #print(cancer.DESCR) # Print the data set description
 
 print (cancer.keys())
+
+
+# You can examine what your function returns by calling it in the cell. If you have questions
+# about the assignment formats, check out the discussion forums for any FAQs
+answer_zero() 
