@@ -49,14 +49,15 @@ def answer_three():
 from sklearn.model_selection import train_test_split
 
 def answer_four():
+	#Use previous answer tuple (X,y) to set local variables
 	X, y = answer_three()
-	print ("X - Data")
-	print (X)
 
-	print ("y - labels")
-	print (y)
+	#Use train_test_split  75% train  25% test
+	X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
-	return #X_train, X_test, y_train, y_test
+	#return a tuple of length 4: (X_train, X_test, y_train, y_test)
+	output = (X_train, X_test, y_train, y_test)
+	return output
 
 
 
