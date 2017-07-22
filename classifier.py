@@ -23,7 +23,8 @@ def answer_two():
 
 cancer = load_breast_cancer()
 
-#print ("cancer")
+print ("cancer data")
+print (cancer.data)
 #print (type(cancer))
 #print (cancer)
 
