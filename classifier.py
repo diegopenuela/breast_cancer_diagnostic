@@ -9,16 +9,17 @@ def answer_zero():
     # The assignment question description will tell you the general format the autograder is expecting
     return len(cancer['feature_names'])
 
+#Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
-    
-    # Your code here
-    
-    return # Return your answer
+	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
+    return one
 
 
 cancer = load_breast_cancer()
 
+print ("cancer")
 print (type(cancer))
+print (cancer)
 
 #print(cancer.DESCR) # Print the data set description
 
@@ -28,6 +29,9 @@ print (type(cancer))
 
 # You can examine what your function returns by calling it in the cell. If you have questions
 # about the assignment formats, check out the discussion forums for any FAQs
+print ("Answer Zero")
 print (answer_zero())
+print (cancer['feature_names'])   #Debug
 
+print ("Answer One")
 print (answer_one())
