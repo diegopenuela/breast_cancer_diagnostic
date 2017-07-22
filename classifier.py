@@ -22,7 +22,12 @@ def answer_one():
 def answer_two():
 	cancerdf = answer_one()
 	
+	#Based on previous answer. Count instances for each target (1,0).
 	distribution = cancerdf.target.value_counts()
+
+	#Define index as requested. Print order (1 then 0, therefore 'benign' then 'malignant')
+	distribution.index = [ 'benign','malignant']
+
 	print (distribution)
 	return # Return your answer
 
