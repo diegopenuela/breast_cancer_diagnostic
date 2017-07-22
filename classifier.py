@@ -21,9 +21,9 @@ def answer_one():
 
 cancer = load_breast_cancer()
 
-print ("cancer")
-print (type(cancer))
-print (cancer)
+#print ("cancer")
+#print (type(cancer))
+#print (cancer)
 
 #print(cancer.DESCR) # Print the data set description
 
@@ -33,9 +33,9 @@ print (cancer)
 
 # You can examine what your function returns by calling it in the cell. If you have questions
 # about the assignment formats, check out the discussion forums for any FAQs
-print ("Answer Zero")
-print (answer_zero())
-print (cancer['feature_names'])   #Debug
+#print ("Answer Zero")
+#print (answer_zero())
+#print (cancer['feature_names'])   #Debug
 
 print ("Answer One")
 print (answer_one())
