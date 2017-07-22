@@ -2,14 +2,13 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets import load_breast_cancer
 
-# You should write your whole answer within the function provided. The autograder will call
-# this function and compare the return value against the correct solution value
+#0. Calculate how many features are in the dataset
 def answer_zero():
     # This function returns the number of features of the breast cancer dataset, which is an integer. 
-    # The assignment question description will tell you the general format the autograder is expecting
     return len(cancer['feature_names'])
 
-#Convert the sklearn.dataset cancer to a DataFrame.
+#1. Organize the dataset in a dataframe based on the features as columns. Then add a column with the category label.
+#This function should return a dataframe (269 x 31) 
 def answer_one():
 	#Convert the sklearn.dataset cancer to a DataFrame.
 	cancerdf = pd.DataFrame(cancer.data , columns=cancer.feature_names)
@@ -17,7 +16,7 @@ def answer_one():
 	cancerdf = cancerdf.assign(target=pd.Series(cancer.target))
 	return cancerdf
 
-
+#2. Calculate how many instances are in the dataframe for each label
 #This function should return a Series named `target` of length 2 with integer values and index =* `['malignant', 'benign']`
 def answer_two():
 	cancerdf = answer_one()
