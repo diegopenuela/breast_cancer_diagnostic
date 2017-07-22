@@ -90,12 +90,12 @@ def answer_seven():
 	X_train, X_test, y_train, y_test = answer_four()
 	knn = answer_five()
 
-	output = knn.score(X_test, y_test)
+	prediction = knn.predict(X_test)
 
-	print ("Type Output")
-	print(type(output))
-	#Estimate the accuracy of the classifier on future data, using the test data
-	return output
+	print ("Type Prediction")
+	print(type(prediction))
+
+	return prediction
 
 
 
