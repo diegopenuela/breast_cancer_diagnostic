@@ -37,17 +37,29 @@ def answer_three():
 
 	# In the DataFrame the data start at Column 0 - Column 30
 	X = cancerdf.iloc[:,0:30]
-	print ("X - Data")
-	print (X)
 
 	# In the DataFrame the labels are already in a column named 'target'
 	y = cancerdf['target']
-	print ("y - labels")
-	print (y)
 
 	#return a tuple of length 2: (X, y)
 	output = (X,y)
 	return output
+
+#4. Using train_test_split, split X (the data) and y (tha labels) into training and test sets (X_train, X_test, y_train, and y_test).
+from sklearn.model_selection import train_test_split
+
+def answer_four():
+	X, y = answer_three()
+	print ("X - Data")
+	print (X)
+
+	print ("y - labels")
+	print (y)
+
+    
+    return #X_train, X_test, y_train, y_test
+
+
 
 cancer = load_breast_cancer()
 
