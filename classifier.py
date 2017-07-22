@@ -14,6 +14,8 @@ def answer_one():
 	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
 	print (type(one))
 	print (one.index)
+	one.index = pd.RangeIndex(start=0, stop=569, step=1)
+	print (one.index)
 	return one
 
 
