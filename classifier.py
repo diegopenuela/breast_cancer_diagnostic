@@ -81,6 +81,7 @@ def answer_six():
 	#gets the mean value for each feature, ignores the target column, and reshapes the data from 1 dimension to 2 (necessary for the precict method of KNeighborsClassifier).
 	means = cancerdf.mean()[:-1].values.reshape(1, -1)
 
+	#predict the class label for a test sample "means"
 	prediction = knn.predict(means)
 
 	return prediction
@@ -90,10 +91,8 @@ def answer_seven():
 	X_train, X_test, y_train, y_test = answer_four()
 	knn = answer_five()
 
+	#predict the class labels for the test set X_test
 	prediction = knn.predict(X_test)
-
-	print ("Type Prediction")
-	print(type(prediction))
 
 	return prediction
 
