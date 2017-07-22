@@ -49,7 +49,7 @@ def answer_three():
 from sklearn.model_selection import train_test_split
 
 def answer_four():
-	#Use previous answer tuple (X,y) to set local variables
+	#Use previous answer 2-tuple to set local variables
 	X, y = answer_three()
 
 	#Use train_test_split  75% train  25% test
@@ -59,6 +59,25 @@ def answer_four():
 	output = (X_train, X_test, y_train, y_test)
 	return output
 
+#5. Using KNeighborsClassifier, fit a k-nearest neighbors (knn) classifier with X_train, y_train and using one nearest neighbor (n_neighbors = 1).
+from sklearn.neighbors import KNeighborsClassifier
+
+def answer_five():
+	#Use previous answer 4-tuple to set local variables
+	X_train, X_test, y_train, y_test = answer_four()
+
+	# Create classifier with k = 1
+	knn = KNeighborsClassifier(n_neighbors = 1)
+
+	print ("knn - before train")
+	print (knn)
+	# Train classifier
+	knn.fit(X_train, y_train)
+
+	print ("knn - after train")
+	print (knn)
+
+    return 
 
 
 cancer = load_breast_cancer()
@@ -109,3 +128,6 @@ print (answer_three())
 
 print ("Answer Four")
 print (answer_four())
+
+print ("Answer Five")
+print (answer_five())
