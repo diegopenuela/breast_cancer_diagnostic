@@ -12,11 +12,8 @@ def answer_zero():
 #Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
 	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
+	index=one.index
 	print (type(one))
-	print (one.index)
-	index = pd.Index(range(0,569,1))
-	print (index)
-	index = one.Index(range(0,569,1))
 	print (index)
 	return one
 
