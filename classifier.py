@@ -28,6 +28,9 @@ def answer_two():
 	#Define index as requested. Print order (1 then 0, therefore 'benign' then 'malignant')
 	distribution.index = [ 'benign','malignant']
 
+	#Series named target. 
+	target = pd.Series(distribution, name="target")
+
 	print (distribution)
 	return # Return your answer
 
