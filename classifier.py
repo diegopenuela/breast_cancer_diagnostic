@@ -73,6 +73,7 @@ def answer_five():
 	return knn.fit(X_train, y_train)
 
 #6. Using the knn classifier to predict the class label using the mean value for each feature.
+# OJO - La verdad NO entendi este paso para que es
 def answer_six():
 	cancerdf = answer_one()
 	knn = answer_five()
@@ -82,10 +83,19 @@ def answer_six():
 
 	prediction = knn.predict(means)
 
-	print ("Type Prediction")
-	print(type(prediction))
-
 	return prediction
+
+#7. Using the knn classifier to predict the class labels for the test set X_test.
+def answer_seven():
+	X_train, X_test, y_train, y_test = answer_four()
+	knn = answer_five()
+
+	output = knn.score(X_test, y_test)
+
+	print ("Type Output")
+	print(type(output))
+	#Estimate the accuracy of the classifier on future data, using the test data
+	return output
 
 
 
@@ -143,4 +153,7 @@ print (answer_five())
 
 print ("Answer Six")
 print (answer_six())
+
+print ("Answer Seven")
+print (answer_seven())
 
