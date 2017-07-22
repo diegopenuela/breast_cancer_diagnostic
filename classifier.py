@@ -11,8 +11,14 @@ def answer_zero():
 
 #Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
-	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
-	return one
+	cancerdf = pd.DataFrame(cancer.data , columns=cancer.feature_names)
+	cancerdf = cancerdf.assign(target=pd.Series(cancer.target))
+	return cancerdf
+
+def answer_two():
+	cancerdf = answer_one()
+	# Your code here
+	return # Return your answer
 
 
 cancer = load_breast_cancer()
@@ -35,3 +41,6 @@ print (answer_zero())
 
 print ("Answer One")
 print (answer_one())
+
+print ("Answer Two")
+print (answer_two())
