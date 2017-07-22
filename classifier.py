@@ -97,7 +97,7 @@ def answer_seven():
 	return prediction
 
 #8. Find the score (mean accuracy) of your knn classifier using X_test and y_test.
-def answer_seven():
+def answer_eight():
 	X_train, X_test, y_train, y_test = answer_four()
 	knn = answer_five()
 
