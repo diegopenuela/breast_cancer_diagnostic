@@ -105,3 +105,6 @@ print (answer_two())
 
 print ("Answer Three")
 print (answer_three())
+
+print ("Answer Four")
+print (answer_four())
