@@ -69,15 +69,8 @@ def answer_five():
 	# Create classifier with k = 1
 	knn = KNeighborsClassifier(n_neighbors = 1)
 
-	print ("knn - before train")
-	print (knn)
 	# Train classifier
-	knn.fit(X_train, y_train)
-
-	print ("knn - after train")
-	print (knn)
-
-	return 
+	return knn.fit(X_train, y_train)
 
 
 cancer = load_breast_cancer()
