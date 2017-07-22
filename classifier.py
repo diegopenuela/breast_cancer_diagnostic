@@ -11,24 +11,54 @@ def answer_zero():
 
 #Convert the sklearn.dataset cancer to a DataFrame.
 def answer_one():
+
+	#Convert the sklearn.dataset cancer to a DataFrame.
 	cancerdf = pd.DataFrame(cancer.data , columns=cancer.feature_names)
+
+	#Assign new column to a DataFrame. Add Target Column (0,1)
 	cancerdf = cancerdf.assign(target=pd.Series(cancer.target))
 	return cancerdf
 
 def answer_two():
 	cancerdf = answer_one()
-	# Your code here
+	
+	distribution = cancerdf.target.value_counts()
+	print (distribution)
 	return # Return your answer
 
 
 cancer = load_breast_cancer()
+
+### Information about cancer
+#type(cancer)
+#<class 'sklearn.datasets.base.Bunch'>
+
+#dir(cancer)
+#['DESCR', 'data', 'feature_names', 'target', 'target_names']
+
+#print(cancer.DESCR) # Print the data set description
+
+#print(cancer.data) # Print the data set
+#array([[  1.79900000e+01,   1.03800000e+01,   1.22800000e+02, ...,
+#          2.65400000e-01,   4.60100000e-01,   1.18900000e-01],
+
+#print(cancer.feature_names) # Print the feature names
+#array(['mean radius', 'mean texture', 'mean perimeter', 'mean area',
+#       'mean smoothness', 'mean compactness', 'mean concavity',
+
+#print(cancer.target) # Print the target
+#array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0,
+#       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+
+#print(cancer.target_names) # Print the target names
+#array(['malignant', 'benign']
 
 print ("cancer data")
 print (cancer.data)
 #print (type(cancer))
 #print (cancer)
 
-#print(cancer.DESCR) # Print the data set description
+
 
 #print (cancer.keys())  #Debug
 
