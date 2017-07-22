@@ -13,6 +13,7 @@ def answer_zero():
 def answer_one():
 	one = pd.DataFrame(cancer.data , columns=cancer.feature_names)
 	print (type(one))
+	print (dir(one))
 	return one
 
 
