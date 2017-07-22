@@ -19,4 +19,4 @@ print (cancer.keys())
 
 # You can examine what your function returns by calling it in the cell. If you have questions
 # about the assignment formats, check out the discussion forums for any FAQs
-answer_zero() 
+print (answer_zero())
