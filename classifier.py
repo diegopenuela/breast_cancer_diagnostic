@@ -45,8 +45,9 @@ def answer_three():
 	print ("y - labels")
 	print (y)
 
-
-	return 
+	#return a tuple of length 2: (X, y)
+	output = (X,y)
+	return output
 
 cancer = load_breast_cancer()
 
