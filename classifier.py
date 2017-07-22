@@ -7,7 +7,7 @@ def answer_zero():
     # This function returns the number of features of the breast cancer dataset, which is an integer. 
     return len(cancer['feature_names'])
 
-#1. Organize the dataset in a dataframe based on the features as columns. Then add a column with the category label.
+#1. Organize the dataset in a dataframe based on the features as columns. Then add a new column with the category label.
 #This function should return a dataframe (269 x 31) 
 def answer_one():
 	#Convert the sklearn.dataset cancer to a DataFrame.
@@ -16,11 +16,11 @@ def answer_one():
 	cancerdf = cancerdf.assign(target=pd.Series(cancer.target))
 	return cancerdf
 
-#2. Calculate how many instances are in the dataframe for each label
+#2. Calculate how many data samples are in the dataframe for each label
 #This function should return a Series named `target` of length 2 with integer values and index =* `['malignant', 'benign']`
 def answer_two():
 	cancerdf = answer_one()
-	#Based on previous answer. Count instances for each target (1,0).
+	#Based on a previous answer. Count data samples for each target (1,0).
 	distribution = cancerdf.target.value_counts()
 	#Define index as requested. Print order (1 then 0, therefore 'benign' then 'malignant')
 	distribution.index = [ 'benign','malignant']
@@ -29,6 +29,25 @@ def answer_two():
 	#print (distribution)  #Debug
 	return target
 
+#3. Split the DataFrame into X (the data) and y (the labels).
+def answer_three():
+	cancerdf = answer_one()
+
+	# Use iloc (selectio based on positions) - http://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
+	# data.iloc[<row selection>,<colum selection>]
+
+	# In the DataFrame the data start at Column 0 - Column 30
+	X = cancerdf.iloc[:,0:30]
+	print ("X - Data")
+	print (X)
+
+	# In the DataFrame the labels are in Column 31
+	y = cancerdf.iloc[:,31]
+	print ("y - labels")
+	print (y)
+
+
+	return 
 
 cancer = load_breast_cancer()
 
@@ -72,3 +91,6 @@ print (answer_one())
 
 print ("Answer Two")
 print (answer_two())
+
+print ("Answer Three")
+print (answer_three())
