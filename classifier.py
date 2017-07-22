@@ -32,7 +32,6 @@ def answer_two():
 #3. Split the DataFrame into X (the data) and y (the labels).
 def answer_three():
 	cancerdf = answer_one()
-
 	# Use iloc (selectio based on positions) - http://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
 	# data.iloc[<row selection>,<colum selection>]
 
@@ -41,8 +40,8 @@ def answer_three():
 	print ("X - Data")
 	print (X)
 
-	# In the DataFrame the labels are in Column 31
-	y = cancerdf.iloc[:,31]
+	# In the DataFrame the labels are already in a column named 'target'
+	y = cancerdf['target']
 	print ("y - labels")
 	print (y)
 
