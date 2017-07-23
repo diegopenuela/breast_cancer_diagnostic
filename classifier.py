@@ -153,6 +153,7 @@ def accuracy_plot():
     plt.xticks([0,1,2,3], ['Malignant\nTraining', 'Benign\nTraining', 'Malignant\nTest', 'Benign\nTest'], alpha=0.8);
     plt.title('Training and Test Accuracies for Malignant and Benign Cells', alpha=0.8)
 
+    plt.show()
 
 
 
@@ -220,3 +221,4 @@ print (answer_eight())
 print ("Accuracy Plot")
 accuracy_plot() 
 
+print ("The End.")
